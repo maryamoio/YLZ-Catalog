@@ -1,140 +1,205 @@
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-body{
-    margin:0;
-    background:#111;
-    font-family:tahoma;
-    color:white;
+body {
+    margin: 0;
+    background: #111;
+    font-family: Tahoma, Arial, sans-serif;
+    direction: rtl;
+    color: white;
+    overflow-x: auto;
 }
 
-
-.catalog{
-    width:100%;
-    min-height:100vh;
-    background:#222;
-    border:2px solid #d4af37;
+.book {
+    width: 1040px;
+    height: 780px;
+    margin: 30px auto;
+    display: flex;
+    direction: ltr;
+    background: #202020;
+    border: 2px solid #d6b64a;
+    box-shadow: 0 10px 40px #000;
 }
 
-
-header{
-    height:80px;
-    background:#171717;
-    border-bottom:1px solid #d4af37;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 40px;
+/* هر صفحه */
+.page {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(135deg, #191919, #292929);
+    border-right: 1px solid #555;
+    overflow: hidden;
+    direction: rtl;
 }
 
-
-.logo{
-    color:#d4af37;
-    font-size:30px;
-    font-weight:bold;
+/* هدر هر صفحه */
+.header {
+    height: 65px;
+    padding: 8px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #191919;
+    border-bottom: 1px solid #333;
 }
 
-
-.title{
-    text-align:right;
-    display:flex;
-    flex-direction:column;
-    color:white;
+.logo {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #d6b64a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d6b64a;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-
-.title span{
-    color:#d4af37;
-    font-size:14px;
+.title {
+    text-align: right;
 }
 
-
-
-.pages{
-    display:flex;
-    gap:2px;
-    background:#333;
+.title b {
+    display: block;
+    font-size: 15px;
+    font-weight: normal;
 }
 
-
-.page{
-    width:50%;
-    padding:25px;
-    background:#202020;
+.title span {
+    display: block;
+    color: #e0bf50;
+    font-size: 12px;
+    margin-top: 3px;
+    direction: ltr;
 }
 
-
-.page h3{
-    text-align:right;
-    color:#aaa;
+/* محتوای صفحه */
+.page-content {
+    padding: 12px 12px 105px;
+    height: calc(100% - 65px);
+    overflow: hidden;
 }
 
-
-.big-image{
-    height:220px;
-    background:#111;
-    border:1px solid #444;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#777;
-    margin-bottom:20px;
+.section-title {
+    color: #aaa;
+    font-size: 10px;
+    margin-bottom: 8px;
 }
 
-
-
-.cars{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
+/* عکس بزرگ */
+.main-photo {
+    width: 100%;
+    height: 180px;
+    background: #101010;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    margin-bottom: 10px;
 }
 
-
-
-.car{
-    height:90px;
-    background:white;
-    color:#111;
-    border-radius:18px;
-    display:flex;
-    align-items:end;
-    justify-content:center;
-    padding-bottom:8px;
+.hint {
+    text-align: center;
+    font-size: 9px;
+    color: #ddd;
+    margin: 8px 0 12px;
 }
 
-
-
-.brands{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
+/* خودروها */
+.cars {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
 }
 
-
-.brands div{
-    height:120px;
-    background:#333;
-    border-radius:20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.car {
+    height: 88px;
+    background: #080808;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 7px;
+    font-size: 9px;
+    color: white;
 }
 
-
-
-footer{
-    height:110px;
-    background:#171717;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    color:#d4af37;
-    font-size:18px;
-    text-align:center;
+.car::before {
+    content: "عکس خودرو";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    height: 57px;
+    background: white;
+    border-radius: 13px;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
 }
 
+/* برندها */
+.brands {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
 
-footer div{
-    width:100px;
+.brands div {
+    height: 95px;
+    background: linear-gradient(#353535, #191919);
+    border-radius: 16px;
+    border: 1px solid #111;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-size: 9px;
+    position: relative;
+}
+
+.brands div::before {
+    content: "LOGO";
+    position: absolute;
+    top: 12px;
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* منوی پایین */
+.bottom-menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 92px;
+    background: #151515;
+    border-top: 1px solid #333;
+    border-bottom: 3px solid #d6b64a;
+    display: flex;
+    direction: rtl;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom-menu div {
+    width: 25%;
+    text-align: center;
+    color: #e0bd4b;
+    font-size: 27px;
+}
+
+.bottom-menu span {
+    display: block;
+    color: white;
+    font-size: 10px;
+    margin-top: 6px;
 }
