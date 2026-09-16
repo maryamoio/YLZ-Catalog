@@ -1,1 +1,140 @@
+*{
+    box-sizing:border-box;
+}
 
+body{
+    margin:0;
+    background:#111;
+    font-family:tahoma;
+    color:white;
+}
+
+
+.catalog{
+    width:100%;
+    min-height:100vh;
+    background:#222;
+    border:2px solid #d4af37;
+}
+
+
+header{
+    height:80px;
+    background:#171717;
+    border-bottom:1px solid #d4af37;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+}
+
+
+.logo{
+    color:#d4af37;
+    font-size:30px;
+    font-weight:bold;
+}
+
+
+.title{
+    text-align:right;
+    display:flex;
+    flex-direction:column;
+    color:white;
+}
+
+
+.title span{
+    color:#d4af37;
+    font-size:14px;
+}
+
+
+
+.pages{
+    display:flex;
+    gap:2px;
+    background:#333;
+}
+
+
+.page{
+    width:50%;
+    padding:25px;
+    background:#202020;
+}
+
+
+.page h3{
+    text-align:right;
+    color:#aaa;
+}
+
+
+.big-image{
+    height:220px;
+    background:#111;
+    border:1px solid #444;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#777;
+    margin-bottom:20px;
+}
+
+
+
+.cars{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+
+
+.car{
+    height:90px;
+    background:white;
+    color:#111;
+    border-radius:18px;
+    display:flex;
+    align-items:end;
+    justify-content:center;
+    padding-bottom:8px;
+}
+
+
+
+.brands{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+
+.brands div{
+    height:120px;
+    background:#333;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+
+footer{
+    height:110px;
+    background:#171717;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    color:#d4af37;
+    font-size:18px;
+    text-align:center;
+}
+
+
+footer div{
+    width:100px;
+}
